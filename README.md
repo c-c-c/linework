@@ -1,6 +1,8 @@
 # linework
 
-This series of experimental digital brushes are made with openFrameworks. They are essentially proof-of-concept miniature projects. Through these explorations I have gained knowledge of fundamental C++ concepts such as dynamic memory allocation, vector behavior and pointers/references for example. So stay tuned because this is a work in progress.
+Hi ! 
+
+This series of experimental digital brushes are made with openFrameworks. They are essentially proof-of-concept miniature projects; through these explorations I have gained knowledge of some fundamental C++ concepts such as dynamic memory allocation, vector behavior and pointers/references. This is an on-going series, the more I learn the more complex the graphics become, so stay tuned ;)
 
 
 
