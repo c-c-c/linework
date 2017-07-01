@@ -14,15 +14,13 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-    
-    
-    
+        
         void drawMode1(); // drawing mode 1
         void drawMode2(); // drawing mode 2
 
 		void keyPressed(int key); // contains event handlers to clear screen, export graphics and alternate between drawing modes
     
-    // for drawing mode 1 
+    // for drawing mode 1
     vector < ofPoint > drawnPoints;
     vector < Line > lines;
     
