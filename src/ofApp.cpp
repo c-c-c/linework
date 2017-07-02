@@ -42,21 +42,30 @@ void ofApp::drawMode1() {
     
     ofSetBackgroundAuto(true); // disables background clearing
     ofBackground(255);
+    
     float posX = ofGetMouseX();
     float posY = ofGetMouseY();
+    
+    //  now we are taking the current position of our mouse we are comparing it with all its previous position.
     
     for (auto point : drawnPoints){
         
         ofPoint mouse;
         mouse.set(posX, posY);
+    
+    // if the distance between the current position of our mouse and a previous position is less than a certain number (here 50 pixels), we create a Line tempLine that connects the position of the mouse with the point in the history vector drawnPoints which distance is less than 50px.
         float distance = (mouse - point).length();
         if (distance < 50){
             Line tempLine;
             tempLine.a = mouse;
             tempLine.b = point;
+    // now we push the tempLine in the lines vector, ready do be drawned on screen.
             lines.push_back(tempLine);
         }
     }
+    // everytime we move the mouse, we're saving the position of the mouse in the
+    // drawnPoints vector. the method push_back adds the position at the end of the vector.
+    // that vector holds all of movements of our mouse on the screen.
     drawnPoints.push_back(ofPoint(posX, posY));
 
     ofEnableAlphaBlending(); // enables transparency
@@ -64,6 +73,8 @@ void ofApp::drawMode1() {
     ofColor army(75,83,32,30);
     ofSetColor(army);
     
+    // we use ofDrawLine to connect points a and b from the Lines class that we created
+    // in the header by drawing a line between each point
     for (auto line : lines) {
         ofDrawLine(line.a, line.b);
     }
@@ -72,6 +83,8 @@ void ofApp::drawMode1() {
 //--------------------------------------------------------------
 void ofApp::drawMode2() {
 
+    // drawing mode 2 makes use of the Polyline class to create a trail of points. Each point corresponds to the position of our mouse at a given time. It's a pretty loose drawing tool, that can be nice to have to do things like line-drawing portraits. 
+    
     ofColor midnight(0, 51, 102);
     ofBackground(midnight);
     ofSetColor(255);
